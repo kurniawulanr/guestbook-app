@@ -1,8 +1,129 @@
+@import 'customs';
+
 // Custom.scss
-// Option A: Include all of Bootstrap
+// Option B: Include parts of Bootstrap
 
-// Include any default variable overrides here (though functions won't be available)
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import 'bootstrap/scss/functions';
 
+// 2. Include any default variable overrides here
+$primary: #3a5985;
+
+$spacers: (
+	0: 0,
+	'px': 1px,
+	'0\\.5': 2px,
+	1: 4px,
+	'1\\.5': 6px,
+	2: 8px,
+	'2\\.5': 10px,
+	3: 12px,
+	'3\\.5': 14px,
+	4: 16px,
+	5: 20px,
+	6: 24px,
+	7: 28px,
+	8: 32px,
+	9: 36px,
+	10: 40px,
+	11: 44px,
+	12: 48px,
+	14: 56px,
+	16: 64px,
+	20: 80px,
+	24: 96px,
+	28: 112px,
+	32: 128px,
+	36: 144px,
+	40: 160px,
+	44: 176px,
+	48: 192px,
+	52: 208px,
+	56: 224px,
+	60: 240px,
+	64: 256px,
+	72: 288px,
+	80: 320px,
+	96: 384px,
+);
+
+$font-sizes: (
+	'xs': 12px,
+	'sm': 14px,
+	'base': 16px,
+	'lg': 18px,
+	'xl': 20px,
+	'2xl': 24px,
+	'3xl': 30px,
+	'4xl': 36px,
+	'5xl': 48px,
+	'6xl': 60px,
+	'7xl': 72px,
+	'8xl': 96px,
+	'9xl': 128px,
+);
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/variables-dark';
+
+// 4. Include any default map overrides here
+$theme-colors: map-merge(
+	$theme-colors,
+	(
+		'black': $black,
+	)
+);
+
+// 5. Include remainder of required parts
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/root';
+
+// 6. Optionally include any other parts as needed
+@import 'bootstrap/scss/utilities';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/images';
+@import 'bootstrap/scss/containers';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/helpers';
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import 'bootstrap/scss/utilities/api';
+
+$utilities: map-merge(
+	$utilities,
+	(
+		'width': (
+			property: width,
+			class: w,
+			values: $spacers,
+		),
+		'height': (
+			property: height,
+			class: h,
+			values: $spacers,
+		),
+		'link-opacity': (
+			css-var: true,
+			class: link-opacity,
+			state: hover,
+			values: $opacities,
+		),
+		'text-opacity': (
+			css-var: true,
+			class: text-opacity,
+			values: $opacities,
+		),
+		'opacity': (
+			property: opacity,
+			values: $opacities,
+		),
+	)
+);
+
+// 7. Include all of Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
-// Then add additional custom code here
+// 8. Add additional custom code here
