@@ -25,13 +25,13 @@
         <div class="collapse navbar-collapse justify-content-lg-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">
+              <a class="nav-link" href="index.html">
                 Home
               </a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="list.html">
+              <a class="nav-link active" aria-current="page" href="list.html">
                 Guest List
               </a>
             </li>
@@ -47,28 +47,125 @@
     </nav>
 
     <!-- Content -->
-    <main class="d-flex justify-content-center align-items-center py-8 mt-14 flex-grow-1 overflow-hidden">
-      <div class="container-md">
-        <div class="row row-cols-1">
+    <main class="d-block py-8 mt-14 flex-grow-1 overflow-hidden">
+      <form action="#" method="post" class="container-sm">
+        <div class="row mb-4">
           <div class="col">
 
-            <div class="d-block text-center px-6 mx-md-6 m-0">
-              <h4 class="fs-4xl fw-medium text-black p-0 mb-4">
-                Bring Your Guestbook to Life
-              </h4>
-              <p class="fs-base fw-normal text-black text-opacity-60 p-0 mb-8">
-                My Digital Guestbook transforms the guestbook experience for the joy and convenience of the planners, hosts and guests. Whether you're planning a wedding, a fundraiser, a graduation, a sorority mixer, a birthday party, or any other gathering, create a guestbook that captures the people that matter.
-              </p>
-              <a href="list.html" class="btn btn-primary btn-lg text-uppercase text-white fs-5 fw-medium rounded-start-pill rounded-end-pill" role="button">
-                Let's Get Started
-              </a>
-            </div>
+            <div class="card overflow-hidden">
+              <div class="card-body p-0 m-0">
 
+                <div class="container-fluid border-bottom">
+                  <div class="row row-cols-1 align-items-center h-16">
+                    <div class="col">
+                      <div class="d-flex justify-content-start">
+                        <a href="list.html" class="d-block focus-ring border-0 rounded-2 link-black link-opacity-60 text-decoration-none" role="button">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="d-block bi bi-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                          </svg>
+                        </a>
+                        <h6 class="d-block ps-4 m-0 fs-xl fw-bold text-black text-opacity-87 text-capitalize text-truncate">
+                          Create New
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col col-lg-8 p-6 m-0">
+
+                      <div class="row mb-4">
+                        <label for="fullname" class="col-md-4 col-form-label text-nowrap">
+                          Full Name
+                        </label>
+                        <div class="col-md-8">
+                          <input type="text" class="form-control" id="fullname" name="fullname" aria-labelledby="fullnameHelpBlock" />
+                          <div id="fullnameHelpBlock" class="form-text">
+                            Type your full name correctly.
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row mb-4">
+                        <label for="email" class="col-md-4 col-form-label text-nowrap">
+                          Email
+                        </label>
+                        <div class="col-md-8">
+                          <input type="email" class="form-control" id="email" name="email" />
+                        </div>
+                      </div>
+
+                      <div class="row mb-4">
+                        <label for="phone_number" class="col-md-4 col-form-label text-nowrap">
+                          Phone Number
+                        </label>
+                        <div class="col-md-8">
+                          <input type="number" class="form-control" id="phone_number" name="phone_number" />
+                        </div>
+                      </div>
+
+                      <div class="row mb-4">
+                        <span class="col-md-4 col-form-label text-nowrap">
+                          Gender
+                        </span>
+                        <div class="col-md-8">
+                          <div class="form-check form-check-inline py-1.5 m-0">
+                            <input class="form-check-input" type="radio" id="male" value="male" name="gender" checked />
+                            <label class="form-check-label" for="male">
+                              Male
+                            </label>
+                          </div>
+
+                          <div class="form-check form-check-inline py-1.5 m-0">
+                            <input class="form-check-input" type="radio" id="female" value="female" name="gender" />
+                            <label class="form-check-label" for="female">
+                              Male
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row mb-0">
+                        <label for="address" class="col-md-4 col-form-label text-nowrap">
+                          Address
+                        </label>
+                        <div class="col-md-8">
+                          <textarea class="form-control" id="address" rows="3" name="address"></textarea>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            
           </div>
         </div>
-      </div>      
+
+        <div class="row mb-0">
+          <div class="col">
+            <div class="hstack gap-4 justify-content-end">
+              <div class="d-inline-block">
+                <button type="reset" class="btn btn-outline-primary rounded-start-pill rounded-end-pill">
+                  Reset
+                </button>
+              </div>
+
+              <div class="d-inline-block">
+                <button type="submit" class="btn btn-primary rounded-start-pill rounded-end-pill">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
     </main>
-    
+
     <!-- Footer -->
     <footer class="d-block p-0 m-0">
       <div class="container-fluid">

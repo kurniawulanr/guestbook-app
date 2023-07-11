@@ -12,7 +12,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.(scss)$/,
+				test: /\.scss$/,
 				use: [
 					{
 						loader: MiniCssExtractPlugin.loader,
@@ -47,6 +47,18 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: './src/index.html',
 			filename: 'index.html',
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/list.html',
+			filename: 'list.html',
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/create.html',
+			filename: 'create.html',
+		}),
+		new HtmlWebpackPlugin({
+			template: './src/edit.html',
+			filename: 'edit.html',
 		}),
 		new MiniCssExtractPlugin(),
 	],
